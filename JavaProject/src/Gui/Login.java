@@ -15,6 +15,8 @@ import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 @SuppressWarnings("unused")
 public class Login {
@@ -23,11 +25,11 @@ public class Login {
 	private JTextField textField_User;
 	private JButton btnIniciar;
 	private JPasswordField passwordField;
-	private final String PASSWORD = "1234";
 	private JLabel lblUser;
 	private JLabel lblPassword;
 	private JButton btnRegistrar;
 	private JLabel lblFondo;
+	private final String PASSWORD = "1234";
 	
 	/**
 	 * Launch the application.
@@ -63,12 +65,29 @@ public class Login {
 		frmLogIn.getContentPane().setLayout(null);
 
 		textField_User = new JTextField();
+		textField_User.addKeyListener(new KeyAdapter() {
+			@SuppressWarnings("static-access")
+			@Override
+			public void keyPressed(KeyEvent evt) {
+				if (evt.getKeyCode() == evt.VK_ENTER){
+					passwordField.requestFocus();
+				}
+			}
+		});
 		textField_User.setBorder(null);
 		textField_User.setBounds(77, 200, 265, 41);
 		frmLogIn.getContentPane().add(textField_User);
 		textField_User.setColumns(10);
 
 		passwordField = new JPasswordField();
+		passwordField.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent evt) {
+				if (evt.getKeyCode() == evt.VK_ENTER){
+					btnIniciar.requestFocus();
+				}
+			}
+		});
 		passwordField.setBorder(null);
 		passwordField.setBounds(77, 262, 265, 41);
 		frmLogIn.getContentPane().add(passwordField);
