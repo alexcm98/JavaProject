@@ -20,7 +20,7 @@ public class Login {
 	private JLabel lblPassword;
 	private JButton btnGo;
 	private JPasswordField passwordField;
-	private final String PASSWORD = "1234";
+	private final int PASSWORD = 1234;
 	
 	
 	/**
@@ -51,7 +51,7 @@ public class Login {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 321, 215);
+		frame.setBounds(100, 100, 290, 215);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -79,11 +79,8 @@ public class Login {
 			@SuppressWarnings("deprecation")
 			@Override
 			public void mouseClicked(MouseEvent evt) {
-				if (textField_User.getText().isEmpty() || passwordField.getText().isEmpty()){
-					JOptionPane.showMessageDialog(frame, "Se deben rellenar todos los campos.", "ERROR",
-							JOptionPane.ERROR_MESSAGE);
-				}else if (passwordField.getText() != PASSWORD){
-					JOptionPane.showMessageDialog(frame, "La contraseña no es correcta.", "ERROR",
+				if (textField_User.getText().isEmpty() || passwordField.getText().equals(PASSWORD)){
+					JOptionPane.showMessageDialog(frame, "Usuario o contraseña inválidos", "ERROR",
 							JOptionPane.ERROR_MESSAGE);
 				}else{
 					PaginaPrincipal principal = new PaginaPrincipal();
@@ -93,7 +90,7 @@ public class Login {
 				
 			}
 		});
-		btnGo.setBounds(84, 142, 89, 23);
+		btnGo.setBounds(97, 142, 64, 23);
 		frame.getContentPane().add(btnGo);
 		
 		
