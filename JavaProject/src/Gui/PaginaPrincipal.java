@@ -87,6 +87,7 @@ public class PaginaPrincipal {
 			public void mouseClicked(MouseEvent evt) {
 				FormularioVehiculo formularioV = new FormularioVehiculo();
 				formularioV.frame.setVisible(true);
+				frame.dispose();
 			}
 		});
 		btnNv.setBounds(157, 29, 76, 90);
