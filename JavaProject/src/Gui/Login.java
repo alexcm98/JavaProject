@@ -1,11 +1,13 @@
 package Gui;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.swing.border.Border;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -20,7 +22,7 @@ public class Login {
 	private JLabel lblPassword;
 	private JButton btnGo;
 	private JPasswordField passwordField;
-	private final int PASSWORD = 1234;
+	private final String PASSWORD = "1234";
 	
 	
 	/**
@@ -79,7 +81,7 @@ public class Login {
 			@SuppressWarnings("deprecation")
 			@Override
 			public void mouseClicked(MouseEvent evt) {
-				if (textField_User.getText().isEmpty() || passwordField.getText().equals(PASSWORD)){
+				if (textField_User.getText().isEmpty() || !passwordField.getText().equals(PASSWORD)){
 					JOptionPane.showMessageDialog(frame, "Usuario o contraseña inválidos", "ERROR",
 							JOptionPane.ERROR_MESSAGE);
 				}else{
