@@ -3,6 +3,9 @@ package Gui;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class PaginaPrincipal {
 
@@ -36,9 +39,24 @@ public class PaginaPrincipal {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setTitle("P\u00E1gina Principal");
+		frame.setBounds(100, 100, 300, 200);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
+		JButton btnBv = new JButton("BV");
+		btnBv.setBounds(45, 71, 67, 23);
+		frame.getContentPane().add(btnBv);
+		
+		JButton btnNv = new JButton("NV");
+		btnNv.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent evt) {
+				FormularioVehiculo formularioV = new FormularioVehiculo();
+				formularioV.frame.setVisible(true);
+			}
+		});
+		btnNv.setBounds(166, 71, 67, 23);
+		frame.getContentPane().add(btnNv);
 	}
-
 }
