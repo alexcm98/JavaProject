@@ -4,19 +4,23 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JPasswordField;
 
 public class Login {
 
 	private JFrame frame;
 	private JTextField textField_User;
-	private JTextField textField_Password;
 	private JLabel lblUser;
 	private JLabel lblPassword;
 	private JButton btnGo;
-
-	private final int PASSWORD = 1234;
+	private JPasswordField passwordField;
+	private final String PASSWORD = "1234";
+	
 	
 	/**
 	 * Launch the application.
@@ -63,13 +67,32 @@ public class Login {
 		frame.getContentPane().add(textField_User);
 		textField_User.setColumns(10);
 
-		textField_Password = new JTextField();
-		textField_Password.setColumns(10);
-		textField_Password.setBounds(84, 79, 86, 20);
-		frame.getContentPane().add(textField_Password);
-
+		passwordField = new JPasswordField();
+		passwordField.setBounds(84, 79, 86, 20);
+		frame.getContentPane().add(passwordField);
+		
 		btnGo = new JButton("GO");
+		btnGo.addMouseListener(new MouseAdapter() {
+			@SuppressWarnings("deprecation")
+			@Override
+			public void mouseClicked(MouseEvent evt) {
+				if (textField_User.getText().isEmpty() || passwordField.getText().isEmpty()){
+					JOptionPane.showMessageDialog(frame, "Se deben rellenar todos los campos.", "ERROR",
+							JOptionPane.ERROR_MESSAGE);
+				}else if (passwordField.getText() != PASSWORD){
+					JOptionPane.showMessageDialog(frame, "La contraseña no es correcta.", "ERROR",
+							JOptionPane.ERROR_MESSAGE);
+				}else{
+					PaginaPrincipal principal = new PaginaPrincipal();
+					principal.frame.setVisible(true);
+					frame.dispose();
+				}
+				
+			}
+		});
 		btnGo.setBounds(84, 142, 89, 23);
 		frame.getContentPane().add(btnGo);
+		
+		
 	}
 }
