@@ -6,6 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Cursor;
+import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
 
 public class PaginaPrincipal {
 
@@ -44,8 +47,19 @@ public class PaginaPrincipal {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JButton btnBv = new JButton("BV");
-		btnBv.setBounds(45, 71, 67, 23);
+		JButton btnBv = new JButton("\r\nBV");
+		btnBv.setHorizontalTextPosition(SwingConstants.CENTER);
+		btnBv.setRolloverIcon(new ImageIcon(PaginaPrincipal.class.getResource("/Images/lupa1.png")));
+		btnBv.setPressedIcon(new ImageIcon(PaginaPrincipal.class.getResource("/Images/lupa3.png")));
+		btnBv.setIcon(new ImageIcon(PaginaPrincipal.class.getResource("/Images/lupa2.png")));
+		btnBv.setVerticalTextPosition(SwingConstants.BOTTOM);
+		btnBv.setVerticalAlignment(SwingConstants.BOTTOM);
+		btnBv.setIconTextGap(-3);
+		btnBv.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnBv.setContentAreaFilled(false);
+		btnBv.setBorderPainted(false);
+		btnBv.setBorder(null);
+		btnBv.setBounds(23, 29, 76, 90);
 		frame.getContentPane().add(btnBv);
 		
 		JButton btnNv = new JButton("NV");
