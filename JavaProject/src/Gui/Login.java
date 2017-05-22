@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JPasswordField;
+import java.awt.Font;
 
 public class Login {
 
@@ -55,10 +56,12 @@ public class Login {
 		frame.getContentPane().setLayout(null);
 
 		lblUser = new JLabel("User:");
+		lblUser.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblUser.setBounds(10, 38, 46, 14);
 		frame.getContentPane().add(lblUser);
 
 		lblPassword = new JLabel("Password:");
+		lblPassword.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblPassword.setBounds(10, 82, 64, 14);
 		frame.getContentPane().add(lblPassword);
 
