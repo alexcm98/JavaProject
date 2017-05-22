@@ -10,18 +10,24 @@ import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JPasswordField;
-import java.awt.Font;
+import java.awt.ComponentOrientation;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.EmptyBorder;
 
+@SuppressWarnings("unused")
 public class Login {
 
 	private JFrame frmLogIn;
 	private JTextField textField_User;
-	private JLabel lblUser;
-	private JLabel lblPassword;
-	private JButton btnGo;
+	private JButton btnIniciar;
 	private JPasswordField passwordField;
 	private final String PASSWORD = "1234";
-	
+	private JLabel lblUser;
+	private JLabel lblPassword;
+	private JButton btnRegistrar;
+	private JLabel lblFondo;
 	
 	/**
 	 * Launch the application.
@@ -52,31 +58,24 @@ public class Login {
 	private void initialize() {
 		frmLogIn = new JFrame();
 		frmLogIn.setTitle("Log in");
-		frmLogIn.setBounds(100, 100, 290, 215);
+		frmLogIn.setBounds(100, 100, 390, 464);
 		frmLogIn.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmLogIn.getContentPane().setLayout(null);
 
-		lblUser = new JLabel("User:");
-		lblUser.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblUser.setBounds(10, 38, 46, 14);
-		frmLogIn.getContentPane().add(lblUser);
-
-		lblPassword = new JLabel("Password:");
-		lblPassword.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblPassword.setBounds(10, 82, 64, 14);
-		frmLogIn.getContentPane().add(lblPassword);
-
 		textField_User = new JTextField();
-		textField_User.setBounds(84, 35, 86, 20);
+		textField_User.setBorder(null);
+		textField_User.setBounds(77, 200, 265, 41);
 		frmLogIn.getContentPane().add(textField_User);
 		textField_User.setColumns(10);
 
 		passwordField = new JPasswordField();
-		passwordField.setBounds(84, 79, 86, 20);
+		passwordField.setBorder(null);
+		passwordField.setBounds(77, 262, 265, 41);
 		frmLogIn.getContentPane().add(passwordField);
 		
-		btnGo = new JButton("GO");
-		btnGo.addMouseListener(new MouseAdapter() {
+		btnIniciar = new JButton("");
+		btnIniciar.setIcon(new ImageIcon(Login.class.getResource("/Images/btn_iniciar_1.png")));
+		btnIniciar.addMouseListener(new MouseAdapter() {
 			@SuppressWarnings("deprecation")
 			@Override
 			public void mouseClicked(MouseEvent evt) {
@@ -91,9 +90,29 @@ public class Login {
 				
 			}
 		});
-		btnGo.setBounds(97, 142, 64, 23);
-		frmLogIn.getContentPane().add(btnGo);
+		btnIniciar.setBounds(77, 340, 81, 41);
+		frmLogIn.getContentPane().add(btnIniciar);
 		
+		btnRegistrar = new JButton("");
+		btnRegistrar.setIcon(new ImageIcon(Login.class.getResource("/Images/btn_regist_1.png")));
+		btnRegistrar.setBounds(217, 340, 91, 41);
+		frmLogIn.getContentPane().add(btnRegistrar);
+		
+		lblUser = new JLabel("");
+		lblUser.setIcon(new ImageIcon(Login.class.getResource("/Images/txt_user.png")));
+		lblUser.setBounds(30, 200, 312, 41);
+		frmLogIn.getContentPane().add(lblUser);
+		
+		lblPassword = new JLabel("");
+		lblPassword.setIcon(new ImageIcon(Login.class.getResource("/Images/txt_pass.png")));
+		lblPassword.setBounds(30, 262, 312, 41);
+		frmLogIn.getContentPane().add(lblPassword);
+		
+		lblFondo = new JLabel("");
+		lblFondo.setBorder(null);
+		lblFondo.setIcon(new ImageIcon(Login.class.getResource("/Images/frame_2.png")));
+		lblFondo.setBounds(-27, 0, 401, 432);
+		frmLogIn.getContentPane().add(lblFondo);	
 		
 	}
 }

@@ -53,7 +53,7 @@ public class FormularioVehiculo {
 		frame.setBounds(100, 100, 633, 573);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		JLabel lblVehculo = new JLabel("-Formulario  de veh\u00EDculos");
+		JLabel lblVehculo = new JLabel("Registro de veh\u00EDculos");
 		lblVehculo.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		lblVehculo.setBounds(45, 26, 319, 29);
 		frame.getContentPane().add(lblVehculo);

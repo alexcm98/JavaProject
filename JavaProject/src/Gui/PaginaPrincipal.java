@@ -15,6 +15,8 @@ import java.awt.event.ActionEvent;
 public class PaginaPrincipal {
 
 	protected JFrame frame;
+	private JButton btnBv;
+	private JButton btnNv;
 
 	/**
 	 * Launch the application.
@@ -48,8 +50,8 @@ public class PaginaPrincipal {
 		frame.setBounds(100, 100, 300, 200);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
-		JButton btnBv = new JButton("Search Vehicle");
+
+		btnBv = new JButton("Search Vehicle");
 		btnBv.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
@@ -67,8 +69,8 @@ public class PaginaPrincipal {
 		btnBv.setBorder(null);
 		btnBv.setBounds(23, 29, 76, 90);
 		frame.getContentPane().add(btnBv);
-		
-		JButton btnNv = new JButton("New Vehicle");
+
+		btnNv = new JButton("New Vehicle");
 		btnNv.setRolloverIcon(new ImageIcon(PaginaPrincipal.class.getResource("/Images/vehiculo1.png")));
 		btnNv.setPressedIcon(new ImageIcon(PaginaPrincipal.class.getResource("/Images/vehiculo3.png")));
 		btnNv.setIcon(new ImageIcon(PaginaPrincipal.class.getResource("/Images/vehiculo2.png")));
