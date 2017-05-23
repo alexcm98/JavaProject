@@ -28,22 +28,6 @@ public class FormularioVehiculo {
 	private JTextField textFecha;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					FormularioVehiculo window = new FormularioVehiculo();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
 	 * Create the application.
 	 */
 	public FormularioVehiculo() {
@@ -55,6 +39,7 @@ public class FormularioVehiculo {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setTitle("Registro Veh\u00EDculo");
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(FormularioVehiculo.class.getResource("/Images/icon.png")));
 		frame.getContentPane().setBackground(Color.DARK_GRAY);
 		frame.setBounds(100, 100, 633, 573);

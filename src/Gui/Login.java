@@ -146,6 +146,16 @@ public class Login {
 		frmLogIn.getContentPane().add(passwordField);
 		
 		btnIniciar = new JButton("");
+		btnIniciar.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				btnIniciar.setSize(95,45);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				btnIniciar.setSize(91,41);
+			}
+		});
 		btnIniciar.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyReleased(KeyEvent e) {
@@ -176,11 +186,21 @@ public class Login {
 				}
 			}
 		});
-		btnIniciar.setBounds(77, 340, 81, 41);
+		btnIniciar.setBounds(77, 340, 91, 41);
 		btnIniciar.setIcon(new ImageIcon(Login.class.getResource("/Images/btn_iniciar_1.png")));
 		frmLogIn.getContentPane().add(btnIniciar);
 		
 		btnRegistrar = new JButton("");
+		btnRegistrar.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				btnRegistrar.setSize(95,45);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				btnRegistrar.setSize(91,41);
+			}
+		});
 		btnRegistrar.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyReleased(KeyEvent e) {
