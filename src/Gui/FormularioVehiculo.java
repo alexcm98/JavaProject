@@ -16,6 +16,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class FormularioVehiculo {
 
@@ -162,5 +164,166 @@ public class FormularioVehiculo {
 		btnReparar.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		btnReparar.setBounds(464, 441, 132, 56);
 		frame.getContentPane().add(btnReparar);
+		
+		//KEYRELEASED
+		
+		textMarca.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				if(e.getKeyCode()==KeyEvent.VK_ENTER)
+				{
+					textMatricula.requestFocus();
+				}
+				if(e.getKeyCode()==KeyEvent.VK_DOWN)
+				{
+					textMatricula.requestFocus();
+				}
+			}
+		});
+		textMatricula.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				if(e.getKeyCode()==KeyEvent.VK_UP)
+				{
+					textMarca.requestFocus();
+				}
+				if(e.getKeyCode()==KeyEvent.VK_ENTER)
+				{
+					textColor.requestFocus();
+				}
+				if(e.getKeyCode()==KeyEvent.VK_DOWN)
+				{
+					textColor.requestFocus();
+				}
+			}
+		});
+		textColor.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				if(e.getKeyCode()==KeyEvent.VK_UP)
+				{
+					textMatricula.requestFocus();
+				}
+				if(e.getKeyCode()==KeyEvent.VK_ENTER)
+				{
+					textFecha.requestFocus();
+				}
+				if(e.getKeyCode()==KeyEvent.VK_DOWN)
+				{
+					textFecha.requestFocus();
+				}
+			}
+		});
+		textFecha.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				if(e.getKeyCode()==KeyEvent.VK_UP)
+				{
+					textColor.requestFocus();
+				}
+				if(e.getKeyCode()==KeyEvent.VK_ENTER)
+				{
+					slider.requestFocus();
+				}
+				if(e.getKeyCode()==KeyEvent.VK_DOWN)
+				{
+					slider.requestFocus();
+				}
+			}
+		});
+		slider.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				if(e.getKeyCode()==KeyEvent.VK_UP)
+				{
+					textFecha.requestFocus();
+				}
+				if(e.getKeyCode()==KeyEvent.VK_ENTER)
+				{
+					btnCrear.requestFocus();
+				}
+				if(e.getKeyCode()==KeyEvent.VK_DOWN)
+				{
+					btnCrear.requestFocus();
+				}
+			}
+		});
+		btnCrear.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				if(e.getKeyCode()==KeyEvent.VK_UP)
+				{
+					slider.requestFocus();
+				}
+				if(e.getKeyCode()==KeyEvent.VK_ENTER)
+				{
+					btnCrear.doClick();
+				}
+				if(e.getKeyCode()==KeyEvent.VK_RIGHT)
+				{
+					btnEditar.requestFocus();
+				}
+			}
+		});
+		btnEditar.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				if(e.getKeyCode()==KeyEvent.VK_UP)
+				{
+					slider.requestFocus();
+				}
+				if(e.getKeyCode()==KeyEvent.VK_LEFT)
+				{
+					btnCrear.requestFocus();
+				}
+				if(e.getKeyCode()==KeyEvent.VK_ENTER)
+				{
+					btnEditar.doClick();
+				}
+				if(e.getKeyCode()==KeyEvent.VK_RIGHT)
+				{
+					btnCliente.requestFocus();
+				}
+			}
+		});
+		btnCliente.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				if(e.getKeyCode()==KeyEvent.VK_UP)
+				{
+					slider.requestFocus();
+				}
+				if(e.getKeyCode()==KeyEvent.VK_LEFT)
+				{
+					btnEditar.requestFocus();
+				}
+				if(e.getKeyCode()==KeyEvent.VK_ENTER)
+				{
+					btnCliente.doClick();
+				}
+				if(e.getKeyCode()==KeyEvent.VK_RIGHT)
+				{
+					btnReparar.requestFocus();
+				}
+			}
+		});
+		btnReparar.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				if(e.getKeyCode()==KeyEvent.VK_UP)
+				{
+					slider.requestFocus();
+				}
+				if(e.getKeyCode()==KeyEvent.VK_LEFT)
+				{
+					btnCliente.requestFocus();
+				}
+				if(e.getKeyCode()==KeyEvent.VK_ENTER)
+				{
+					btnReparar.doClick();
+				}
+			}
+		});
+	
 	}
 }
