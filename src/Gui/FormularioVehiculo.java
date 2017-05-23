@@ -165,7 +165,7 @@ public class FormularioVehiculo {
 		btnReparar.setBounds(464, 441, 132, 56);
 		frame.getContentPane().add(btnReparar);
 		
-		//KEYRELEASED
+		//KEYLISTENER
 		
 		textMarca.addKeyListener(new KeyAdapter() {
 			@Override
