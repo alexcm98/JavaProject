@@ -30,21 +30,6 @@ public class PaginaPrincipal {
 	private JButton btnBv;
 	private JButton btnNv;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PaginaPrincipal window = new PaginaPrincipal();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the application.
@@ -86,7 +71,7 @@ public class PaginaPrincipal {
 		frame.requestFocus();
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(PaginaPrincipal.class.getResource("/Images/icon.png")));
 		frame.getContentPane().setBackground(Color.DARK_GRAY);
-		frame.setTitle("P\u00E1gina Principal");
+		frame.setTitle("Panel");
 		frame.setBounds(100, 100, 317, 205);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
